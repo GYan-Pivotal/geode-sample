@@ -22,6 +22,8 @@ for HA and high performance, there are some tips for GEODE:
 
 1. assign same memory to all the cacheserver
 
+1. assign all the members of a cluster in one switch, to avoid network issues
+
 1. assign 2G or 4G to locator
 
 2. avoid to put locator and cacheserver on 1 host, that will cause this host to be a different one than the other hosts 
@@ -29,8 +31,6 @@ for HA and high performance, there are some tips for GEODE:
 1. assign diffrent port for locators, if you want to run more than 1 locator on 1 host
 
 1. add nohup to the shell, to avoid shutdown processes of locators and cacheservers when you quit the terminal.
-
-2. add nohup to the shell, to avoid shutdown processes of locators and cacheservers when you quit the terminal.
 
 2. assign Xms and Xmx to be same , to avoid dynamic memory asignment when JVM is running, that will cause performance down.
 
