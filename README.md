@@ -1,5 +1,6 @@
 # geode-sample
 some sample project and best practice to run Apache Geode as a cluster
+<generalSetup.md> is general for all the setup, the other folders is some sample for scenarios.
 
 ### Project Break Down
 
@@ -16,7 +17,7 @@ for HA and high performance, there are some tips for GEODE:
 
 1. for 1 cluster, start at least 2-3 locators
 
-1. put locators on diff host, that will add HA to the cluster.
+1. put locators on diff host, that will increase HA to the cluster.
 
 1. for storage,  avoid to use NAS,  prefer to use SAN or DAS.  DAS (Direct Attached Storage), NAS (Network Attached Storage) and SAN (Storage Area Networks).
 
