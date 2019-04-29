@@ -1,13 +1,14 @@
 # geode-sample
-a sample project to run Apache Geode as a cluster
+some sample project and best practice to run Apache Geode as a cluster
 
 ### Project Break Down
 
 ```
 .
-├── generalSetup      - a handbook to setup an env for geode
-├── 1cluster          - setup a cluster for 2*3
-└── 2clustersForWan   - setup 2 clusters for wan-gateway
+├── generalSetup.md      - a handbook to setup an env for geode
+├── 1cluster             - setup a cluster for 2*3
+├── 1clusterMultiRun     - setup a cluster, to run multi process on 1 host
+└── 2clustersForWan      - setup 2 clusters for wan-gateway
 
 ```
 ### General Recommandations
