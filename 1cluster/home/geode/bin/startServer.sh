@@ -1,0 +1,4 @@
+#!/bin/sh
+HOSTNAME=`hostname`
+DATE=`date +%Y-%m-%d-%H-%M`
+gfsh start server --name=cache_${HOSTNAME} --locators=[locator1 ip][30001],[locator2 ip][30001] --server-port=60001 --include-system-classpath --properties-file=/home/geode/config/geode.properties --dir=/home/geode/server --J=-Xms31g --J=-Xmx31g --J=-Xmn2g --J=-XX:MaxPermSize=256m --J=-XX:PermSize=256m --J=-Xss256k --J=-XX:+UseParNewGC --J=-XX:+UseConcMarkSweepGC --J=-XX:CMSInitiatingOccupancyFraction=70 --J=-XX:+UseCMSInitiatingOccupancyOnly  --J=-XX:+UnlockDiagnosticVMOptions --J=-XX:ParGCCardsPerStrideChunk=32768 --J=-XX:+CMSParallelRemarkEnabled --J=-XX:+ScavengeBeforeFullGC --J=-XX:+CMSScavengeBeforeRemark  --J=-XX:+PrintGCDetails  --J=-XX:+PrintGCDateStamps --J=-XX:+PrintHeapAtGC --J=-XX:+PrintClassHistogram  --J=-XX:+PrintGCApplicationStoppedTime --J=-Xloggc:/home/geode/log/gc_cache_${HOSTNAME}_${DATE}.log --J=-Dgemfire.enable-cluster-configuration=true --J=-Dgemfire.use-cluster-configuration=true &

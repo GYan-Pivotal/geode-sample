@@ -5,6 +5,9 @@
 
 **login as root**
 ##OS Env
+### sync time on all servers
+   specify NTP server
+
 ###User and Groups
 add 'geode' group and 'geode' user
 
