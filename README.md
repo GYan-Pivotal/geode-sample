@@ -1,6 +1,6 @@
 # geode-sample
 some sample project and best practice to run Apache Geode as a cluster
-<generalSetup.md> is general for all the setup, the other folders is some sample for scenarios.
+[generalSetup.md](generalSetup.md) is general for all the setup, the other folders is some sample for scenarios.
 
 ### Project Break Down
 
