@@ -25,7 +25,7 @@ for HA and high performance, there are some tips for GEODE:
 
 1. assign all the members of a cluster in one switch, to avoid network issues
 
-1. assign 2G or 4G to locator
+1. assign 2G or 4G to locator. please consider to add more memory to locator , when you find some gc issues.
 
 2. avoid to put locator and cacheserver on 1 host, that will cause this host to be a different one than the other hosts 
 
@@ -41,7 +41,9 @@ for HA and high performance, there are some tips for GEODE:
 
 5. adjust JVM runtime parameter, after reviewed GC logs
 
-6. Can use something , GCViewer to see how the memory is doing: https://github.com/chewiebug/GCViewer. or GCeasy: https://gceasy.io/
+6. For GC logs,  to see and analyze how the memory is consumed
+   - GCViewer: https://github.com/chewiebug/GCViewer. 
+   - GCeasy: https://gceasy.io/
 
 ### Recommandations for VM
 if you plan to run Geode in Virtual Machine env, please read the following link first:
