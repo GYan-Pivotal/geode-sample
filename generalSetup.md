@@ -140,7 +140,7 @@ refer to the following folder structure：
 
 ```
 
-### GemFire cluster config
+### Geode cluster config
 /home/geode/config/geode.properties
 
 ```Shell
