@@ -218,7 +218,9 @@ open remote Debug
 ##Cluster Operation
 ###startup
 run locator
->in 1 cluster, there are 2 locators at least
+>in 1 cluster, there are 2 locators at least. 
+
+>In the latest version, it is also recommanded to run 3 locators per cluster.
 
 run cacheserver
 >cluster with Partition Region， 3 Cacheserver at least
@@ -226,7 +228,9 @@ run cacheserver
 >cluster without Partition Region， 2 CacheServer at least
 
 ###stop
-1. first prioity to run 'gfsh stop' and 'shutdown'
+in Geode, recommanded to shutdown server and clusters GRACEFULLY.
+
+1. first , try to run 'gfsh stop' or 'shutdown' in GFSH (GRACEFULLY way)
 
 1. then try 'kill -2'
 
