@@ -1,0 +1,1 @@
+gfsh start locator --name=locator2 --bind-address=127.0.0.1 --hostname-for-clients=127.0.0.1 --port=50002 --dir=locator2 --properties=../config/geode.properties --J=-Dgemfire.jmx-manager-port=10092 --J=-Dgemfire.jmx-manager-http-port=0 &

@@ -1,0 +1,1 @@
+gfsh start server --name=Cache2 --server-port=60002 --cache-xml-file=/Geode_2servers_Cluster2/config/Cache2.xml --dir=server2 --properties-file="/Geode_2servers_Cluster2/config/geode.properties" --classpath="/Geode_2servers_Cluster1/lib/*"

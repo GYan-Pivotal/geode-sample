@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache
+    xmlns="http://geode.apache.org/schema/cache"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
+    version="1.0">
+    <gateway-sender id="sender2" parallel="false" remote-distributed-system-id="2"/>
+    <gateway-receiver/>
+    
+    <cache-server max-connections="800"/>
+    
+    <region name="TestRegion1" refid="REPLICATE">
+        <region-attributes statistics-enabled="true" enable-gateway="true"  gateway-sender-ids="sender2">
+        </region-attributes>
+    </region>
+    <region name="TestRegion2" refid="REPLICATE">
+        <region-attributes statistics-enabled="true">
+        </region-attributes>
+    </region>
+    
+    <resource-manager critical-heap-percentage="85"/>
+    
+</cache>
