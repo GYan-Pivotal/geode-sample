@@ -4,11 +4,12 @@
 
 
 **login as root**
-##OS Env
+
+## OS Env
 ### sync time on all servers
    specify NTP server
 
-###User and Groups
+### User and Groups
 add 'geode' group and 'geode' user
 
 ```Shell
@@ -18,7 +19,7 @@ $ sudo passwd geode
 ```
 
 
-###set swappiness
+### set swappiness
 vi /etc/sysctl.conf
 
 ```Shell
@@ -36,7 +37,7 @@ sysctl -p
 ```
 
 
-###set file-descriptor and process for current user
+### set file-descriptor and process for current user
  vi  /etc/security/limits.conf
  
 ```Shell
@@ -50,18 +51,18 @@ sysctl -p
 ```Shell
 * soft nproc 1048576
 ```
-###turn-off iptables
+### turn-off iptables
 
 ```Shell
 service    iptables  stop
 chkconfig  iptables  off
 ```
 
-###set Hosts
+### set Hosts
 modify /etc/hosts，to add all ip of all members, include locator and CacheServer
 
-###update hostname
-####redhat
+### update hostname
+#### RedHat
 vi /etc/sysconfig/network
 
 ```Shell
@@ -69,18 +70,18 @@ NETWORKING=yes
 HOSTNAME=RH-64-GEODE-01
 ```
 
-####suse
+#### SUSE
 vi /etc/HOSTNAME
 ```Shell
 NETWORKING=yes
 HOSTNAME=RH-64-GEODE-01
 ```
 
-##installation
-###install JDK
+## installation
+### install JDK
 please install JDK version specified by Apache Geode documentation
 
-###install Geode
+### install Geode
 considering Geode version match
 considering OS version match
 
@@ -89,7 +90,7 @@ https://geode.apache.org/docs/guide/19/getting_started/system_requirements/host_
 
 
 
-##Restart
+## Restart
 
 ```Shell
  shutdown -r now
@@ -97,7 +98,7 @@ https://geode.apache.org/docs/guide/19/getting_started/system_requirements/host_
  
 
 **login as geode**
-##set env parameter
+## set env parameter
 vi config file
 ~/.bash_rc; ~/.bash_profile; /etc/profile
 
@@ -120,8 +121,8 @@ alias cdg="cd /home/geode"
 alias ll="ls -trl"
 ```
 
-##deployment
-###create folders for running
+## deployment
+### create folders for running
 /home/geode/
 
 refer to the following folder structure：
@@ -139,7 +140,7 @@ refer to the following folder structure：
 
 ```
 
-###GemFire cluster config
+### GemFire cluster config
 /home/geode/config/geode.properties
 
 ```Shell
@@ -190,8 +191,8 @@ enable-cluster-configuration=true
 use-cluster-configuration=true
 ```
  
-###config Geode shell script
-####scprit to run locator
+### config Geode shell script
+#### scprit to run locator
 vi /home/geode/bin/startlc.sh
 
 ```Shell
@@ -199,7 +200,7 @@ vi /home/geode/bin/startlc.sh
 NAME=`hostname`
 gfsh start locator --port=30001 --dir=/home/geode/locator --name=locator_${NAME} --J=-Dgemfire.jmx-manager-port=20001 --J=-Xms2g --J=-Xmx2g --J=-Dgemfire.enable-cluster-configuration=true --J=-Dgemfire.use-cluster-configuration=true --include-system-classpath --properties-file=/home/geode/config/locator.properties &
 ``` 
-####script to run cacheserver
+#### script to run cacheserver
 vi /home/geode/bin/startServer.sh
 
 ```Shell
@@ -215,8 +216,8 @@ open remote Debug
 --J=\"-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=50101\"
 ```
 
-##Cluster Operation
-###startup
+## Cluster Operation
+### startup
 run locator
 >in 1 cluster, there are 2 locators at least. 
 
@@ -227,7 +228,7 @@ run cacheserver
 
 >cluster without Partition Region， 2 CacheServer at least
 
-###stop
+### stop
 in Geode, recommanded to shutdown server and clusters GRACEFULLY.
 
 1. first , try to run 'gfsh stop' or 'shutdown' in GFSH (GRACEFULLY way)
@@ -236,8 +237,8 @@ in Geode, recommanded to shutdown server and clusters GRACEFULLY.
 
 1. then try 'kill -9'
 
-##Reference
-###header of Cache.xml  for Geode
+## Reference
+### header of Cache.xml  for Geode
 Server side
 
 ```XML
@@ -263,14 +264,14 @@ client side
 ...
 </client-cache>
 ```
-###hot deploy env considering
+### hot deploy env considering
 1. set deploy-working-dir
 
 1. do not put deploy-working-dir into classpath
 
 1. do not put funtion jar file to classpath
 
-###Log4j2
+### Log4j2
 add following to the script to run cacheserver
 
 ```
