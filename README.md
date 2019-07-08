@@ -41,17 +41,17 @@ for HA and high performance, there are some tips for GEODE:
 
 5. adjust JVM runtime parameter, after reviewed GC logs
 
-6. For GC logs,  to see and analyze how the memory is consumed
-   - GCViewer: https://github.com/chewiebug/GCViewer. 
+6. For GC logs,  to see and analyze how the memory is consumed, the following tool can help you:
+   - GCViewer: https://github.com/chewiebug/GCViewer
    - GCeasy: https://gceasy.io/
 
 ### Recommandations for VM
 if you plan to run Geode in Virtual Machine env, please read the following link first:
 https://geode.apache.org/docs/guide/19/managing/monitor_tune/performance_on_vsphere.html
 
-**Especially, please take care about vMotion settings.**
+**Especially, please take care about vMotion settings.** Not to set it to be true by default.
 
-**keep the ratio of vm:jvm:"geode process" to be 1:1:1** , that will simplify the running model of Geode.
+**keep the ratio of vm:jvm:"geode process" to be 1:1:1** , that will simplify the running model of Geode and will reduce racing issues of jvm and "geode process".
 
 ### refer
 - https://github.com/charliemblack/geode-geospatial-index/blob/master/README.md#how-to-scale-the-grid
