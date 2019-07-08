@@ -99,8 +99,13 @@ https://geode.apache.org/docs/guide/19/getting_started/system_requirements/host_
 
 **login as geode**
 ## set env parameter
-vi config file
-~/.bash_rc; ~/.bash_profile; /etc/profile
+vi config file, please choose one of following to do configuration.
+
+```
+~/.bash_rc;
+~/.bash_profile;
+/etc/profile;
+```
 
 
 ```Shell
